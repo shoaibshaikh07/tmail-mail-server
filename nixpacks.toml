@@ -1,11 +1,8 @@
-[phases.setup]
-env = { PORT = "25" }
-
-[phases.build]
-command = "bun run build"
-
-[phases.start]
-command = "bun run src/index.ts"
+[build]
+plan = "bun"
 
 [build.env]
 DATABASE_URL = { fromEnv = "DATABASE_URL" }
+
+[start]
+cmd = "bun run start"
