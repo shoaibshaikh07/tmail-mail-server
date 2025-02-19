@@ -1,0 +1,29 @@
+{
+  "name": "mail-server",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/mailparser": "^3.4.5",
+    "@types/pg": "^8.11.11",
+    "@types/smtp-server": "^3.5.10",
+    "drizzle-kit": "^0.30.4",
+    "tsx": "^4.19.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.3",
+    "mailparser": "^3.7.2",
+    "pg": "^8.13.3",
+    "smtp-server": "^3.13.6"
+  }
+}
