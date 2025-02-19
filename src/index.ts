@@ -12,6 +12,18 @@ const client = new Pool({
 const smtpServer = new SMTPServer({
   allowInsecureAuth: true,
   authOptional: true,
+  onConnect(session, callback): void {
+    console.log("Connection established for", session.remoteAddress);
+    callback();
+  },
+  onRcptTo(address, session, callback): void {
+    console.log("Rcpt to", address);
+    callback();
+  },
+  onMailFrom(address, session, callback): void {
+    console.log("Mail from", address);
+    callback();
+  },
   async onData(stream, session, callback): Promise<void> {
     try {
       const parsedEmail = await simpleParser(stream);
